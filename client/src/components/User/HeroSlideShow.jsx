@@ -126,9 +126,9 @@ const HeroSlideShow = () => {
       <div className="md:w-4/5 w-full  aspect-video relative overflow-hidden">
         <Slide
           ref={slideRef}
-          title={currentSlide.title}
-          src={currentSlide.poster}
-          id={currentSlide.id}
+          title={currentSlide?.title}
+          src={currentSlide?.poster}
+          id={currentSlide?.id}
         />
 
         {/* cloned slide */}
@@ -136,9 +136,9 @@ const HeroSlideShow = () => {
           ref={clonedSlideRef}
           onAnimationEnd={handleAnimationEnd}
           className="absolute inset-0"
-          src={clonedSlide.poster}
-          title={clonedSlide.title}
-          id={currentSlide.id}
+          src={clonedSlide?.poster}
+          title={clonedSlide?.title}
+          id={currentSlide?.id}
         />
 
         <SlideShowController

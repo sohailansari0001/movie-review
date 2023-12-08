@@ -23,21 +23,9 @@ const PORT = process.env.PORT || 8000;
 // app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(bodyParser.json({ limit: "10mb" })); // Increase the limit to handle larger payloads
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
-app.use(express.json({ limit: "50mb" }));
-app.use(express.urlencoded({ limit: "50mb" }));
-app.use(
-  cors({
-    limit: "50mb",
-    // origin: "https://mern-movie-reiew-app-tbfv.vercel.app",
-    credentials: true,
-  })
-);
-
-app.use((req, res, next) => {
-  console.log("Request Headers:", req.headers);
-  console.log("CORS Headers:", res.getHeaders());
-  next();
-});
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(cors());
 
 // routes
 app.use("/api/v1/user", userRoute);
